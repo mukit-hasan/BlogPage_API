@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+  HomePage
+{% endblock title %}
+
+{% block body %}
+  <style>
+    #d-none{
+      display: none;
+    }
+  </style>
+
+    <div class="mt-2">
+      <div class="container mb-3">
+        <h4>Home Page</h4>
+        <a href="{% url 'loginPage' %}" id="login" class="btn btn-success">LogIn</a>
+        <button id="logout" onclick="logout()" class="btn btn-danger">LogOut</button>
+      </div>
+      <div class="container card card-body shadow">
+        <form class="form" method="post">
+          <!-- <label for="title">Title:</label> -->
+          <input class="form-control mb-2" name="title" placeholder="Title" type="text">
+          <!-- <label for="content">Content:</label> -->
+          <textarea class="form-control mb-2" placeholder="Write your Blog..." name="content" cols="30" rows="3"></textarea>
+          <button class="btn btn-primary" type="submit">Submit</button>
+        </form>
+      </div>
+      
+      <div class="container mt-3">
+        <h2>BlogPost:</h2>
+        <div class="blogpost card card-body">
+        </div>
+      </div>
+
+    </div>
+  <script src="{% static 'js/home.js' %} "></script>
+{% endblock body %}

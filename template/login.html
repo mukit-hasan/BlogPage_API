@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}LoginPage{% endblock title %}
+
+{% block body %}
+    <style>
+        .form{
+            max-width: 50%;
+        }
+    </style>
+    <div class="row mt-5" >
+        <div class="col"></div>
+        <form class="logform form col-sm-12 col-lg-9 col-md-12" method="post">
+            <label for="username">Username:</label>
+            <input class="form-control mb-3" name="username" placeholder="Username" type="text">
+            <label for="Password">Password:</label>
+            <input class="form-control mb-3" name="password" placeholder="Password" type="password">
+            <button class="btn btn-info" type="submit">Log In</button>
+        </form>
+        <div class="col"></div>
+    </div>
+
+    <script src="{% static 'js/login.js' %}"></script>
+{% endblock body %}
